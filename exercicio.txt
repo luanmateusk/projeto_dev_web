@@ -1,0 +1,17 @@
+
+pedir para que o usuário informe a sigla de uma criptomoeda,
+a aplicação deve validar se existe algum par para negociação, 
+caso não exista informar que não existe e perguntar novamente ou sair.
+caso exista deverá pedir qual par de ativos o usuario deseja pegar as informações de compra e venda no momento
+
+o preco de compra(bids) ou o preco de venda(asks)
+
+endpoint que possui os pares negociaveis
+
+endpoint para pegar as ofertas
+requisição get 
+https://api1.binance.com/api/v3/depth
+parametro {
+    symbol: symbolinformado,
+    limit: quantidade de ofertas (no caso coloca 1)
+}
