@@ -7,6 +7,7 @@ caso exista deverá pedir qual par de ativos o usuario deseja pegar as informaç
 o preco de compra(bids) ou o preco de venda(asks)
 
 endpoint que possui os pares negociaveis
+https://api1.binance.com/api/v3/exchangeInfo
 
 endpoint para pegar as ofertas
 requisição get 
