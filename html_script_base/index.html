@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="easter.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#002fff',
+                        secundary: '#630bff',
+                        terciary: '#1e0ce8',
+                        background: '#0db9ff',
+                        backgroundLight: '#00ffff',
+                    },
+                    fontFamily: {
+                        sans: ['Graphik', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    scale: {
+                        '98': '0.98',
+                    }
+                }
+            },
+            plugins: [
+            ]
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <title>
+        Consumo Api
+    </title>
+    <script type="text/javascript">
+        var symbols = []
+        window.addEventListener("load", function (event) {
+            fetch('https://api1.binance.com/api/v3/exchangeInfo')
+                .then(response => response.json())
+                .then(obj => symbols =
+                    (obj.symbols.filter(item => item.status.includes('TRADING')))
+                )
+        });
+
+        function buscar() {
+            const valor = document.getElementById("valor").value;
+            document.getElementById("list").innerHTML = null
+            // document.getElementById("list").innerText = document.getElementById("list").textContent + valor
+            if (valor) {
+                const data = symbols.filter(
+                    item => item.symbol.toLowerCase().includes(valor.toLowerCase())
+                )
+                data.forEach(item =>
+                    document.getElementById("list").innerHTML = document.getElementById("list").innerHTML +
+                    `<article
+                        class="rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:animate-background hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s]">
+                        <div class="rounded-[10px] bg-transparent p-2 flex flex-col items-center ">
+                            <span class="text-white text-bold">
+                                ${item.baseAsset}
+                            </span>
+                            <span class="text-white text-bold">
+                                ${item.quoteAsset}
+                            </span>
+                        </div>
+                    </article>`
+                )
+            }
+            else
+                alert("Informe um valor!")
+
+        }
+    </script>
+</head>
+
+<body class="bg-background">
+
+    <div class="flex flex-col m-5">
+        <input id="valor" placeholder="Digite"
+            class="border focus:outline-0 p-2 rounded-lg ring-primary  focus:ring my-2">
+        </input>
+
+        <button onclick="buscar()" class="bg-secundary hover:bg-transparent border border-secundary
+                        rounded-lg py-3  
+                        transition scale-98 hover:scale-100 ">Buscar</button>
+
+        <div id="list" class=" m-5 grid grid-cols-8 gap-5">
+
+
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<!-- https://api1.binance.com/api/v3/exchangeInfo -->
