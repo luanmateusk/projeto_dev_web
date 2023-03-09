@@ -8,14 +8,14 @@
 </head>
 
 <body>
-    <div class="grid sm:grid-cols-5 h-screen">
-        <div class=" bg-slate-200 block grid-span-2 col-span-2">
+    <div class="grid sm:grid-cols-[400px_auto] h-screen">
+        <div class=" bg-slate-200 block ">
             <div class="flex flex-col h-screen">
                 <div>
-                    <input class="w-full" />
+                    <input class="w-full border focus:outline-0 p-2 rounded-lg ring-primary focus:ring my-2" />
                 </div>
-                <div class="m-2 bg-slate-100 flex flex-row h-20">
-                    <img width="20px" height="20px" />
+                <div class="m-2 bg-slate-100 grid grid-cols-[80px_auto_60px] h-20">
+                    <img width="80px" height="80px" />
                     <div class="flex flex-col ml-5 h-full justify-around ">
                         <span class="border-2">
                             Sistemas de informação
@@ -24,74 +24,45 @@
                             João: Link do meet
                         </span>
                     </div>
-                    <div>
-                        a
-                    </div>
-                </div>
-                <div class="m-2 bg-slate-100 flex flex-row h-20">
-                    <img width="20px" height="20px" />
                     <div class="flex flex-col ml-5 h-full justify-around ">
                         <span class="border-2">
-                            Sistemas de informação
+                            3
                         </span>
                         <span class="border-2">
-                            João: Link do meet
+                            10:10
                         </span>
-                    </div>
-                    <div>
-                        a
                     </div>
                 </div>
-                <div class="m-2 bg-slate-100 flex flex-row h-20">
-                    <img width="20px" height="20px" />
-                    <div class="flex flex-col ml-5 h-full justify-around ">
-                        <span class="border-2">
-                            Sistemas de informação
-                        </span>
-                        <span class="border-2">
-                            João: Link do meet
-                        </span>
-                    </div>
-                    <div>
-                        a
-                    </div>
-                </div>
-                <div class="m-2 bg-slate-100 flex flex-row h-20">
-                    <img width="20px" height="20px" />
-                    <div class="flex flex-col ml-5 h-full justify-around ">
-                        <span class="border-2">
-                            Sistemas de informação
-                        </span>
-                        <span class="border-2">
-                            João: Link do meet
-                        </span>
-                    </div>
-                    <div>
-                        a
-                    </div>
-                </div>
-                <div class="m-2 bg-slate-100 flex flex-row h-20">
-                    <img width="20px" height="20px" />
-                    <div class="flex flex-col ml-5 h-full justify-around ">
-                        <span class="border-2">
-                            Sistemas de informação
-                        </span>
-                        <span class="border-2">
-                            João: Link do meet
-                        </span>
-                    </div>
-                    <div>
-                        a
-                    </div>
-                </div>
+
             </div>
         </div>
-        <div class="bg-slate-700 hidden sm:block col-span-3  text-white   ">
+        <div class="bg-slate-700 hidden sm:block">
             <div class="flex flex-col h-screen justify-between">
-                <span>Cabecalho</span>
-                <div class="h-full">body</div>
-                <div>
-                    <input class="w-full" />
+                <div class="border p-2 flex justify-between ">
+                    <div class="flex items-center">
+                        <img width="70px" height="70px" class="p-2" />
+                        <div class="grid">
+                            <span>Cabecalho</span>
+                            <span>visto as tal horas</span>
+                        </div>
+                    </div>
+                    <button class="bg-white p-5"></button>
+                </div>
+                <div class="h-full flex flex-col-reverse  sm:px-4 lg:px-16 py-4 text-black">
+                    <div class="flex ">
+                        <span class="bg-white rounded-lg p-2">
+                            mensagem1
+                        </span>
+                    </div>
+                    <div class="flex justify-end">
+                        <span class="bg-white rounded-lg p-2">
+                            mensagem
+                        </span>
+                    </div>
+                </div>
+                <div class="m-5">
+                    <input
+                        class="w-full border focus:outline-0 p-2 rounded-lg ring-primary text-black  focus:ring my-2" />
                 </div>
             </div>
         </div>

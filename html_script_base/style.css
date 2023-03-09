@@ -1,4 +1,6 @@
-
+:root{
+    margin: 0;
+}
 /* width */
 ::-webkit-scrollbar {
     width: 50px;
